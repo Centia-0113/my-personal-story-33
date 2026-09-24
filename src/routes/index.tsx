@@ -94,6 +94,33 @@ function Index() {
                 This space will grow with me—a place for the things I care about, the work I’m proud of, and the moments worth remembering.
               </p>
             </div>
+
+            <div className="mt-16 grid gap-px border border-border bg-border sm:grid-cols-2">
+              <div className="bg-surface p-8">
+                <p className="font-sans text-[0.62rem] uppercase tracking-[0.2em] text-accent">Work</p>
+                <p className="mt-4 body-copy">
+                  Details about my professional work and projects are being gathered—this section will hold the roles, craft, and work I’m most proud of.
+                </p>
+              </div>
+              <div className="bg-surface p-8">
+                <p className="font-sans text-[0.62rem] uppercase tracking-[0.2em] text-accent">Background</p>
+                <p className="mt-4 body-copy">
+                  Based in Johannesburg, South Africa. My education and the path that brought me here will live in this space.
+                </p>
+              </div>
+              <div className="bg-surface p-8">
+                <p className="font-sans text-[0.62rem] uppercase tracking-[0.2em] text-accent">Interests</p>
+                <p className="mt-4 body-copy">
+                  Honest expression, thoughtful details, and quiet confidence. More of the things I care about will be added here soon.
+                </p>
+              </div>
+              <div className="bg-surface p-8">
+                <p className="font-sans text-[0.62rem] uppercase tracking-[0.2em] text-accent">Skills</p>
+                <p className="mt-4 body-copy">
+                  The tools and skills I work with will be listed here as this portrait grows.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -39,6 +39,7 @@ function Index() {
         </a>
         <nav aria-label="Main navigation" className="flex items-center gap-7 font-sans text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
           <a className="transition-colors hover:text-foreground" href="#about">About</a>
+          <a className="transition-colors hover:text-foreground" href="#relationships">Relationships</a>
           <a className="transition-colors hover:text-foreground" href="#ask">Ask</a>
           <a className="transition-colors hover:text-foreground" href="#connect">Connect</a>
         </nav>
@@ -118,6 +119,40 @@ function Index() {
                 <p className="font-sans text-[0.62rem] uppercase tracking-[0.2em] text-accent">Skills</p>
                 <p className="mt-4 body-copy">
                   The tools and skills I work with will be listed here as this portrait grows.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="relationships" className="px-5 py-24 sm:px-10 lg:px-14 lg:py-36">
+        <div className="mx-auto grid max-w-[88rem] gap-14 lg:grid-cols-[.55fr_1.45fr] lg:gap-24">
+          <div>
+            <p className="section-label">02 / Relationships</p>
+            <div className="mt-8 h-px w-16 bg-accent" />
+          </div>
+          <div>
+            <p className="max-w-4xl font-display text-4xl leading-[1.12] sm:text-5xl lg:text-6xl">
+              The people who shape me—<span className="italic text-accent">family, friends, and mentors</span>—are the quiet foundation of everything I do.
+            </p>
+            <div className="mt-14 grid gap-px border border-border bg-border sm:grid-cols-3">
+              <div className="bg-background p-8">
+                <p className="font-sans text-[0.62rem] uppercase tracking-[0.2em] text-accent">Family</p>
+                <p className="mt-4 body-copy">
+                  The people who knew me first. Stories about my family and what they mean to me will live here.
+                </p>
+              </div>
+              <div className="bg-background p-8">
+                <p className="font-sans text-[0.62rem] uppercase tracking-[0.2em] text-accent">Friendships</p>
+                <p className="mt-4 body-copy">
+                  The friends who walk beside me—this space will hold the bonds that keep me grounded.
+                </p>
+              </div>
+              <div className="bg-background p-8">
+                <p className="font-sans text-[0.62rem] uppercase tracking-[0.2em] text-accent">Mentors</p>
+                <p className="mt-4 body-copy">
+                  The people who have guided and challenged me. Their influence will be honoured here.
                 </p>
               </div>
             </div>

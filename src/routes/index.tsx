@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AskMe } from "@/components/AskMe";
 import portrait from "../assets/innocentia-portrait.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -38,6 +39,7 @@ function Index() {
         </a>
         <nav aria-label="Main navigation" className="flex items-center gap-7 font-sans text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
           <a className="transition-colors hover:text-foreground" href="#about">About</a>
+          <a className="transition-colors hover:text-foreground" href="#ask">Ask</a>
           <a className="transition-colors hover:text-foreground" href="#connect">Connect</a>
         </nav>
       </header>
@@ -96,10 +98,12 @@ function Index() {
         </div>
       </section>
 
+      <AskMe />
+
       <section id="connect" className="px-5 py-24 sm:px-10 lg:px-14 lg:py-32">
         <div className="mx-auto flex max-w-[88rem] flex-col justify-between gap-16 md:flex-row md:items-end">
           <div>
-            <p className="section-label">02 / Connect</p>
+            <p className="section-label">03 / Connect</p>
             <h2 className="mt-7 max-w-3xl font-display text-5xl leading-none sm:text-7xl lg:text-8xl">
               Let’s keep the <span className="italic text-accent">conversation</span> open.
             </h2>

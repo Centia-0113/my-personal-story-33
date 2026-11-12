@@ -1,16 +1,58 @@
-// Portfolio content the assistant answers from. Keep in sync with the page.
+// Portfolio content the "Ask about me" assistant answers from.
+// Generated from src/content/site.ts so it always matches the page.
+import {
+  STATUS_LABEL,
+  becoming,
+  contact,
+  focusAreas,
+  interests,
+  journey,
+  leadership,
+  profile,
+  projects,
+  research,
+  story,
+  vision,
+} from "@/content/site";
+
+const known = (s: string) => !s.startsWith("[");
+const list = (items: string[]) => items.filter(known).join("; ");
+
 export const PORTFOLIO_CONTENT = `
-Name: Innocentia Bulenda
-Tagline: Becoming, creating, and moving through life with intention. The website is a small space for her story, her perspective, and what comes next.
-About: She is learning to trust her own rhythm — to grow without rushing and create a life that feels true.
-Her story is still unfolding. She is drawn to honest expression, thoughtful details, and the kind of confidence that doesn't need to announce itself.
-The site will grow with her — a place for the things she cares about, the work she's proud of, and the moments worth remembering.
-Location/timezone: Johannesburg, South Africa (UTC+2).
-Work: Details about her professional work and projects are still being gathered. If asked, say this section of her story is still being written and invite the visitor to check back or reach out directly.
-Background: She is based in Johannesburg, South Africa. Further education and career history have not been shared on the site yet.
-Interests: Honest expression, thoughtful details, quiet confidence, and intentional living. More interests will be added as the site grows.
-Skills: Her specific skills and tools have not been listed yet.
-Relationships: The site has a Relationships section honouring the people who shape her — family, friends, and mentors. Specific names and stories have not been shared yet; if asked, say this part of her story is still being written and that the section celebrates the people who ground her.
-Contact: visitors can use the "Say hello" email link in the Connect section.
-When asked about work, background, skills, or interests that are not yet listed, answer warmly from what is known, be honest that those details are still being added, and suggest reaching out via the Connect section.
+Name: ${profile.name}
+Site: ${profile.siteTitle} — ${profile.tagline}
+Headline: ${profile.heroLine} ${profile.heroSupport}
+Roles: ${profile.roles.join("; ")}
+
+About (in her words): ${story.lead} ${story.paragraphs.join(" ")}
+Main areas of interest: ${focusAreas.map((f) => `${f.title} — ${f.text}`).join(" ")}
+Values: ${story.values.map((v) => `${v.title} (${v.text})`).join("; ")}
+
+Journey:
+${journey.map((m) => `- ${m.title} — ${m.subtitle}. ${m.summary} ${list(m.details)}`).join("\n")}
+
+Leadership: ${leadership.role}. ${leadership.intro}
+Experiences: ${leadership.experiences.map((e) => `${e.title}: ${e.text}`).join("; ")}
+Skills built: ${leadership.skills.join(", ")}
+
+Interests: ${interests.map((i) => i.title).join("; ")}
+
+Research:
+${research.map((r) => `- ${r.title} (${r.field}, ${STATUS_LABEL[r.status]}): ${r.overview} Technologies: ${r.technologies.join(", ")}`).join("\n")}
+
+Projects:
+${projects
+  .map(
+    (p) =>
+      `- ${p.name} (${STATUS_LABEL[p.status]}): ${known(p.description) ? p.description : "details coming soon"} Tech: ${p.technologies.join(", ")}.${known(p.contribution) ? ` Her contribution: ${p.contribution}` : ""}${p.repo ? ` Repo: ${p.repo}` : ""}`,
+  )
+  .join("\n")}
+
+Currently learning/exploring: ${becoming.columns.map((c) => `${c.label}: ${list(c.items)}`).join(" | ")}
+
+Vision: ${vision.statement} ${vision.aspirations.map((a) => a.text).join(" ")}
+
+Contact: Use the form in the "Let's Connect" section. GitHub: ${contact.github}.${contact.linkedin ? ` LinkedIn: ${contact.linkedin}.` : ""}
+
+Dates, qualification names and some project details are not yet published on the site. If asked, say those details are still being added and suggest reaching out via the Let's Connect section.
 `;

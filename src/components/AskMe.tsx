@@ -3,7 +3,11 @@ import { DefaultChatTransport } from "ai";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 
-const SUGGESTIONS = ["Who is Innocentia?", "What does she care about?", "How can I reach her?"];
+const SUGGESTIONS = [
+  "What is her research about?",
+  "What has she built?",
+  "What is she working towards?",
+];
 const transport = new DefaultChatTransport({ api: "/api/ask" });
 
 export function AskMe() {
@@ -27,10 +31,10 @@ export function AskMe() {
   const waiting = busy && (!last || last.role === "user");
 
   return (
-    <section id="ask" className="border-t border-border bg-surface px-5 py-24 sm:px-10 lg:px-14 lg:py-32">
-      <div className="mx-auto grid max-w-[88rem] gap-14 lg:grid-cols-[.55fr_1.45fr] lg:gap-24">
+    <section id="ask" className="border-t border-border px-5 py-24 sm:px-10 lg:px-14 lg:py-32">
+      <div className="mx-auto grid max-w-[80rem] gap-14 lg:grid-cols-[.55fr_1.45fr] lg:gap-24">
         <div>
-          <p className="section-label">02 / Ask</p>
+          <p className="section-label">Ask</p>
           <div className="mt-8 h-px w-16 bg-accent" />
         </div>
         <div>
@@ -38,7 +42,8 @@ export function AskMe() {
             Curious? <span className="italic text-accent">Ask about me.</span>
           </h2>
           <p className="body-copy mt-6 max-w-xl">
-            Ask anything about my background and work — answers are drawn from what I’ve shared here.
+            Ask anything about my background and work — answers are drawn from what I’ve shared
+            here.
           </p>
 
           <div className="mt-10 border-t border-border pt-8">
@@ -47,7 +52,9 @@ export function AskMe() {
                 {messages.map((m) => {
                   const text = m.parts.map((p) => (p.type === "text" ? p.text : "")).join("");
                   return m.role === "user" ? (
-                    <p key={m.id} className="font-display text-2xl italic text-accent">{text}</p>
+                    <p key={m.id} className="font-display text-2xl italic text-accent">
+                      {text}
+                    </p>
                   ) : (
                     <div key={m.id} className="body-copy prose-p:mb-3 max-w-2xl">
                       <ReactMarkdown>{text}</ReactMarkdown>

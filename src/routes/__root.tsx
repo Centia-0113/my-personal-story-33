@@ -77,14 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Innocentia Bulenda" },
-      { name: "description", content: "The personal website of Innocentia Bulenda." },
+      { title: "MY STORY. — Innocentia Bulenda" },
+      {
+        name: "description",
+        content:
+          "Innocentia Bulenda — software developer focused on software testing and data analytics, and an aspiring author. Beyond the code. Beyond the title. Always becoming.",
+      },
+      { name: "theme-color", content: "#231520" },
       { name: "author", content: "Innocentia Bulenda" },
-      { property: "og:title", content: "Innocentia Bulenda" },
-      { property: "og:description", content: "The personal website of Innocentia Bulenda." },
+      { property: "og:title", content: "MY STORY. — Innocentia Bulenda" },
+      {
+        property: "og:description",
+        content: "Beyond the Code. Beyond the Title. Always Becoming.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -95,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
